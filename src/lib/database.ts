@@ -4,20 +4,39 @@ import { Pool } from 'pg'
 // Create a connection pool for better performance
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: {
+  ssl: process.env.NODE_ENV === 'production' ? {
     rejectUnauthorized: false
-  },
+  } : false,
   max: 1, // Limit connections for serverless
   idleTimeoutMillis: 30000,
-  connectionTimeoutMillis: 2000,
+  connectionTimeoutMillis: 10000, // Increased timeout
 })
+
+// Test database connection
+export async function testConnection() {
+  try {
+    console.log('Testing database connection...')
+    console.log('DATABASE_URL:', process.env.DATABASE_URL ? 'Set' : 'Not set')
+    const result = await query('SELECT NOW() as current_time')
+    console.log('Database connection successful:', result.rows[0])
+    return true
+  } catch (error) {
+    console.error('Database connection failed:', error)
+    return false
+  }
+}
 
 // Database query helper
 export async function query(text: string, params?: any[]) {
   const client = await pool.connect()
   try {
+    console.log('Executing query:', text.substring(0, 100) + '...')
     const result = await client.query(text, params)
+    console.log('Query executed successfully')
     return result
+  } catch (error) {
+    console.error('Database query error:', error)
+    throw error
   } finally {
     client.release()
   }
