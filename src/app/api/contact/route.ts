@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { contactDb } from '@/lib/database'
 import { sendContactEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
@@ -13,15 +13,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Save to database
-    const contact = await prisma.contact.create({
-      data: {
-        name,
-        email,
-        subject,
-        message,
-      }
-    })
+        // Save to database
+        const contact = await contactDb.create(name, email, subject, message)
 
     // Send email notification
     try {

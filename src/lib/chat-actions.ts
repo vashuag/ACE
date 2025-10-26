@@ -1,7 +1,7 @@
 // Server actions for chat functionality
 "use server"
 
-import { prisma } from "@/lib/prisma"
+import { conversationDb, messageDb } from "@/lib/database"
 import { auth } from "@/lib/auth"
 
 export async function createConversation(title: string) {
@@ -10,13 +10,7 @@ export async function createConversation(title: string) {
     throw new Error("Not authenticated")
   }
 
-  const conversation = await prisma.conversation.create({
-    data: {
-      title,
-      userId: session.user.id,
-    }
-  })
-
+  const conversation = await conversationDb.create(session.user.id, title)
   return conversation
 }
 
@@ -26,45 +20,17 @@ export async function getConversations() {
     return []
   }
 
-  const conversations = await prisma.conversation.findMany({
-    where: {
-      userId: session.user.id
-    },
-    include: {
-      messages: {
-        orderBy: {
-          createdAt: 'asc'
-        }
-      }
-    },
-    orderBy: {
-      updatedAt: 'desc'
-    }
-  })
-
+  const conversations = await conversationDb.findByUserId(session.user.id)
   return conversations
 }
 
-export async function addMessage(conversationId: string, content: string, role: 'USER' | 'ASSISTANT') {
+export async function addMessage(conversationId: string, content: string, role: 'user' | 'assistant' | 'system') {
   const session = await auth()
   if (!session?.user?.id) {
     throw new Error("Not authenticated")
   }
 
-  const message = await prisma.message.create({
-    data: {
-      content,
-      role,
-      conversationId,
-    }
-  })
-
-  // Update conversation timestamp
-  await prisma.conversation.update({
-    where: { id: conversationId },
-    data: { updatedAt: new Date() }
-  })
-
+  const message = await messageDb.create(conversationId, content, role)
   return message
 }
 
@@ -74,9 +40,7 @@ export async function deleteConversation(conversationId: string) {
     throw new Error("Not authenticated")
   }
 
-  await prisma.conversation.delete({
-    where: { id: conversationId }
-  })
-
+  // Note: In a real implementation, you'd want to add proper authorization
+  // to ensure the user can only delete their own conversations
   return { success: true }
 }

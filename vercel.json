@@ -1,14 +1,10 @@
 {
-  "buildCommand": "rm -rf src/generated && npx prisma generate && npm run build",
+  "buildCommand": "npm run build",
   "installCommand": "npm install",
   "framework": "nextjs",
   "functions": {
     "src/app/api/**/*.ts": {
       "maxDuration": 30
     }
-  },
-  "env": {
-    "PRISMA_GENERATE_DATAPROXY": "true",
-    "PRISMA_QUERY_ENGINE_LIBRARY": "/var/task/node_modules/.prisma/client/libquery_engine-rhel-openssl-3.0.x.so.node"
   }
 }

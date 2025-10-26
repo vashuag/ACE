@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { newsletterDb } from '@/lib/database'
 import { sendNewsletterEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
@@ -13,22 +13,18 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Check if email already exists
-    const existingSubscription = await prisma.newsletter.findUnique({
-      where: { email }
-    })
+        // Check if email already exists
+        const existingSubscription = await newsletterDb.findByEmail(email)
 
-    if (existingSubscription) {
-      return NextResponse.json(
-        { error: 'Email already subscribed' },
-        { status: 400 }
-      )
-    }
+        if (existingSubscription) {
+          return NextResponse.json(
+            { error: 'Email already subscribed' },
+            { status: 400 }
+          )
+        }
 
-    // Create newsletter subscription
-    const subscription = await prisma.newsletter.create({
-      data: { email }
-    })
+        // Create newsletter subscription
+        const subscription = await newsletterDb.create(email)
 
     // Send confirmation email
     try {

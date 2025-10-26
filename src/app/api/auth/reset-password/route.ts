@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { userDb, passwordResetDb } from '@/lib/database'
 import { sendPasswordResetEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
@@ -14,9 +14,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user exists
-    const user = await prisma.user.findUnique({
-      where: { email }
-    })
+    const user = await userDb.findByEmail(email)
 
     if (!user) {
       // Don't reveal if user exists or not for security
@@ -30,19 +28,8 @@ export async function POST(request: NextRequest) {
     const resetToken = Array.from({ length: 32 }, () => Math.floor(Math.random() * 16).toString(16)).join('')
     const expires = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
 
-    // Delete any existing reset tokens for this email
-    await prisma.passwordResetToken.deleteMany({
-      where: { email }
-    })
-
-    // Create new reset token
-    await prisma.passwordResetToken.create({
-      data: {
-        email,
-        token: resetToken,
-        expires
-      }
-    })
+    // Create new reset token (this will delete existing ones)
+    await passwordResetDb.create(email, resetToken, expires)
 
     // Send reset email
     try {
