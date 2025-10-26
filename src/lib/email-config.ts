@@ -6,9 +6,9 @@ const EMAIL_CONFIG = {
     testMode: true, // Enable test mode for development
   },
   production: {
-    from: 'Agent to Environment <welcome@agenttoenvironment.com>',
-    supportEmail: 'support@agenttoenvironment.com',
-    testMode: false,
+    from: 'Agent to Environment <onboarding@resend.dev>', // Using Resend's default domain for now
+    supportEmail: 'vashuag9@gmail.com', // Your verified email for admin notifications
+    testMode: false, // Real emails to users
   }
 }
 

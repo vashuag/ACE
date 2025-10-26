@@ -8,11 +8,12 @@ export async function sendWelcomeEmail(email: string, name: string) {
   try {
     // In test mode, send to your verified email instead
     const recipientEmail = EMAIL_SETTINGS.testMode ? 'vashuag9@gmail.com' : email
+    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Welcome to Agent to Environment! 🚀 (Original: ${email})` : 'Welcome to Agent to Environment! 🚀'
     
     const { data, error } = await resend.emails.send({
       from: EMAIL_SETTINGS.from,
       to: [recipientEmail],
-      subject: EMAIL_SETTINGS.testMode ? `[TEST] Welcome to Agent to Environment! 🚀 (Original: ${email})` : 'Welcome to Agent to Environment! 🚀',
+      subject: subject,
       html: `
         <!DOCTYPE html>
         <html>
@@ -176,11 +177,12 @@ export async function sendNewsletterEmail(email: string) {
   try {
     // In test mode, send to your verified email instead
     const recipientEmail = EMAIL_SETTINGS.testMode ? 'vashuag9@gmail.com' : email
+    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Welcome to our Newsletter! 📰 (Original: ${email})` : 'Welcome to our Newsletter! 📰'
     
     const { data, error } = await resend.emails.send({
       from: EMAIL_SETTINGS.from,
       to: [recipientEmail],
-      subject: EMAIL_SETTINGS.testMode ? `[TEST] Welcome to our Newsletter! 📰 (Original: ${email})` : 'Welcome to our Newsletter! 📰',
+      subject: subject,
       html: `
         <!DOCTYPE html>
         <html>
