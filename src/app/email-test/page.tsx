@@ -30,7 +30,7 @@ export default function EmailTestPage() {
         success: response.ok,
         message: response.ok ? "Newsletter email sent successfully!" : data.error
       }])
-    } catch (error) {
+    } catch {
       setResults(prev => [...prev, {
         type: "Newsletter",
         success: false,
@@ -60,7 +60,7 @@ export default function EmailTestPage() {
         success: response.ok,
         message: response.ok ? "Welcome email sent successfully!" : data.error
       }])
-    } catch (error) {
+    } catch {
       setResults(prev => [...prev, {
         type: "Welcome Email",
         success: false,
@@ -91,7 +91,7 @@ export default function EmailTestPage() {
         success: response.ok,
         message: response.ok ? "Contact email sent successfully!" : data.error
       }])
-    } catch (error) {
+    } catch {
       setResults(prev => [...prev, {
         type: "Contact Form",
         success: false,

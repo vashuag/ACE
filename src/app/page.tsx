@@ -1,11 +1,62 @@
 "use client"
 
-import { Suspense } from "react"
+import React from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ArrowRight, Zap, Shield, Users, Star, Bot, Brain, Globe, Sparkles } from "lucide-react"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowRight, Zap, Shield, Users, Bot, Brain, Globe, Sparkles } from "lucide-react"
 import { motion } from "framer-motion"
+
+// Floating Shapes Component
+function FloatingShapes() {
+  const shapes = [
+    { id: 1, left: 10, top: 20, duration: 4, delay: 0 },
+    { id: 2, left: 20, top: 40, duration: 5, delay: 0.5 },
+    { id: 3, left: 30, top: 60, duration: 6, delay: 1 },
+    { id: 4, left: 40, top: 30, duration: 4.5, delay: 1.5 },
+    { id: 5, left: 50, top: 50, duration: 5.5, delay: 2 },
+    { id: 6, left: 60, top: 25, duration: 4.2, delay: 0.8 },
+    { id: 7, left: 70, top: 45, duration: 5.8, delay: 1.2 },
+    { id: 8, left: 80, top: 35, duration: 4.8, delay: 1.8 },
+    { id: 9, left: 90, top: 55, duration: 5.2, delay: 2.2 },
+    { id: 10, left: 15, top: 70, duration: 4.3, delay: 0.3 },
+    { id: 11, left: 25, top: 15, duration: 5.3, delay: 1.3 },
+    { id: 12, left: 35, top: 75, duration: 4.7, delay: 1.7 },
+    { id: 13, left: 45, top: 10, duration: 5.7, delay: 2.3 },
+    { id: 14, left: 55, top: 65, duration: 4.1, delay: 0.7 },
+    { id: 15, left: 65, top: 5, duration: 5.1, delay: 1.1 },
+    { id: 16, left: 75, top: 80, duration: 4.9, delay: 1.9 },
+    { id: 17, left: 85, top: 12, duration: 5.4, delay: 2.4 },
+    { id: 18, left: 5, top: 35, duration: 4.6, delay: 0.6 },
+    { id: 19, left: 95, top: 25, duration: 5.6, delay: 1.6 },
+    { id: 20, left: 12, top: 85, duration: 4.4, delay: 2.1 },
+  ]
+
+  return (
+    <>
+      {shapes.map((shape) => (
+        <motion.div
+          key={shape.id}
+          className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
+          style={{
+            left: `${shape.left}%`,
+            top: `${shape.top}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            opacity: [0.6, 1, 0.6],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: shape.duration,
+            repeat: Infinity,
+            delay: shape.delay,
+          }}
+        />
+      ))}
+    </>
+  )
+}
 
 // Hero Section with Animations
 function HeroSection() {
@@ -14,27 +65,7 @@ function HeroSection() {
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
-        {/* Floating geometric shapes */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -30, 0],
-              opacity: [0.6, 1, 0.6],
-              scale: [1, 1.2, 1],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 3,
-            }}
-          />
-        ))}
+        <FloatingShapes />
       </div>
 
       {/* Content */}

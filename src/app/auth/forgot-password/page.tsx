@@ -36,7 +36,7 @@ export default function ForgotPasswordPage() {
       } else {
         setError(data.error || "Something went wrong")
       }
-    } catch (error) {
+    } catch {
       setError("Network error. Please try again.")
     } finally {
       setIsLoading(false)

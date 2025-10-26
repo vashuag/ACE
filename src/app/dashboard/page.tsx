@@ -32,6 +32,10 @@ export default function ChatDashboard() {
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
+
   useEffect(() => {
     if (status === "loading") return
     if (!session) router.push("/auth/signin")
@@ -40,10 +44,6 @@ export default function ChatDashboard() {
   useEffect(() => {
     scrollToBottom()
   }, [conversations, activeConversation])
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-  }
 
   const createNewConversation = () => {
     const newConversation: Conversation = {
