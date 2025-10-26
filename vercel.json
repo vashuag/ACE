@@ -8,6 +8,7 @@
     }
   },
   "env": {
-    "PRISMA_GENERATE_DATAPROXY": "true"
+    "PRISMA_GENERATE_DATAPROXY": "true",
+    "PRISMA_QUERY_ENGINE_LIBRARY": "/var/task/node_modules/.prisma/client/libquery_engine-rhel-openssl-3.0.x.so.node"
   }
 }
