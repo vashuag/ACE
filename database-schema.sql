@@ -1,9 +1,12 @@
 -- Database schema for Agent to Environment
 -- Run this in your Supabase SQL editor
 
+-- Enable UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- Users table
 CREATE TABLE IF NOT EXISTS "User" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     name TEXT,
     email TEXT UNIQUE NOT NULL,
     password TEXT,
@@ -15,7 +18,7 @@ CREATE TABLE IF NOT EXISTS "User" (
 
 -- Accounts table (for OAuth)
 CREATE TABLE IF NOT EXISTS "Account" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     "userId" TEXT NOT NULL REFERENCES "User"(id) ON DELETE CASCADE,
     type TEXT NOT NULL,
     provider TEXT NOT NULL,
@@ -32,7 +35,7 @@ CREATE TABLE IF NOT EXISTS "Account" (
 
 -- Sessions table
 CREATE TABLE IF NOT EXISTS "Session" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     "sessionToken" TEXT UNIQUE NOT NULL,
     "userId" TEXT NOT NULL REFERENCES "User"(id) ON DELETE CASCADE,
     expires TIMESTAMP NOT NULL
@@ -48,7 +51,7 @@ CREATE TABLE IF NOT EXISTS "VerificationToken" (
 
 -- Password reset tokens
 CREATE TABLE IF NOT EXISTS "PasswordResetToken" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     email TEXT NOT NULL,
     token TEXT UNIQUE NOT NULL,
     expires TIMESTAMP NOT NULL,
@@ -57,7 +60,7 @@ CREATE TABLE IF NOT EXISTS "PasswordResetToken" (
 
 -- Contact form submissions
 CREATE TABLE IF NOT EXISTS "Contact" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     subject TEXT NOT NULL,
@@ -67,14 +70,14 @@ CREATE TABLE IF NOT EXISTS "Contact" (
 
 -- Newsletter subscriptions
 CREATE TABLE IF NOT EXISTS "Newsletter" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     email TEXT UNIQUE NOT NULL,
     "createdAt" TIMESTAMP DEFAULT NOW()
 );
 
 -- Conversations
 CREATE TABLE IF NOT EXISTS "Conversation" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     title TEXT NOT NULL,
     "userId" TEXT NOT NULL REFERENCES "User"(id) ON DELETE CASCADE,
     "createdAt" TIMESTAMP DEFAULT NOW(),
@@ -83,7 +86,7 @@ CREATE TABLE IF NOT EXISTS "Conversation" (
 
 -- Messages
 CREATE TABLE IF NOT EXISTS "Message" (
-    id TEXT PRIMARY KEY DEFAULT gen_random_uuid()::text,
+    id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     content TEXT NOT NULL,
     role TEXT NOT NULL CHECK (role IN ('user', 'assistant', 'system')),
     "conversationId" TEXT NOT NULL REFERENCES "Conversation"(id) ON DELETE CASCADE,

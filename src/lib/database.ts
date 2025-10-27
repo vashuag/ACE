@@ -51,7 +51,7 @@ export const userDb = {
 
   async create(name: string, email: string, hashedPassword: string) {
     const result = await query(
-      'INSERT INTO "User" (name, email, password, "createdAt") VALUES ($1, $2, $3, NOW()) RETURNING id, name, email, "createdAt"',
+      'INSERT INTO "User" (id, name, email, password, "createdAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, NOW()) RETURNING id, name, email, "createdAt"',
       [name, email, hashedPassword]
     )
     return result.rows[0]
