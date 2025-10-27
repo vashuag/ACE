@@ -8,7 +8,7 @@ const EMAIL_CONFIG = {
   production: {
     from: 'Agent to Environment <onboarding@resend.dev>', // Using Resend's default domain for now
     supportEmail: 'vashuag9@gmail.com', // Your verified email for admin notifications
-    testMode: false, // Real emails to users
+    testMode: true, // Keep test mode until domain is verified
   }
 }
 

@@ -278,10 +278,14 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
   try {
     const resetUrl = `${process.env.NEXTAUTH_URL}/auth/reset-password?token=${resetToken}`
     
+    // In test mode, send to your verified email instead
+    const recipientEmail = EMAIL_SETTINGS.testMode ? 'vashuag9@gmail.com' : email
+    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Reset Your Password - Agent to Environment (Original: ${email})` : 'Reset Your Password - Agent to Environment'
+    
     const { data, error } = await resend.emails.send({
       from: EMAIL_SETTINGS.from,
-      to: [email],
-      subject: 'Reset Your Password - Agent to Environment',
+      to: [recipientEmail],
+      subject: subject,
       html: `
         <!DOCTYPE html>
         <html>
