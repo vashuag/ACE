@@ -67,7 +67,7 @@ export const userDb = {
 export const contactDb = {
   async create(name: string, email: string, subject: string, message: string) {
     const result = await query(
-      'INSERT INTO "Contact" (name, email, subject, message, "createdAt") VALUES ($1, $2, $3, $4, NOW()) RETURNING *',
+      'INSERT INTO "Contact" (id, name, email, subject, message, "createdAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, $4, NOW()) RETURNING *',
       [name, email, subject, message]
     )
     return result.rows[0]
@@ -83,7 +83,7 @@ export const newsletterDb = {
 
   async create(email: string) {
     const result = await query(
-      'INSERT INTO "Newsletter" (email, "createdAt") VALUES ($1, NOW()) RETURNING *',
+      'INSERT INTO "Newsletter" (id, email, "createdAt") VALUES (uuid_generate_v4()::text, $1, NOW()) RETURNING *',
       [email]
     )
     return result.rows[0]
@@ -97,7 +97,7 @@ export const passwordResetDb = {
     await query('DELETE FROM "PasswordResetToken" WHERE email = $1', [email])
     
     const result = await query(
-      'INSERT INTO "PasswordResetToken" (email, token, expires, "createdAt") VALUES ($1, $2, $3, NOW()) RETURNING *',
+      'INSERT INTO "PasswordResetToken" (id, email, token, expires, "createdAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, NOW()) RETURNING *',
       [email, token, expires]
     )
     return result.rows[0]
