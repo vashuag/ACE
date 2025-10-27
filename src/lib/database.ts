@@ -51,7 +51,7 @@ export const userDb = {
 
   async create(name: string, email: string, hashedPassword: string) {
     const result = await query(
-      'INSERT INTO "User" (id, name, email, password, "createdAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, NOW()) RETURNING id, name, email, "createdAt"',
+      'INSERT INTO "User" (id, name, email, password, "createdAt", "updatedAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, NOW(), NOW()) RETURNING id, name, email, "createdAt", "updatedAt"',
       [name, email, hashedPassword]
     )
     return result.rows[0]
@@ -128,7 +128,7 @@ export const conversationDb = {
 
   async create(userId: string, title: string) {
     const result = await query(
-      'INSERT INTO "Conversation" ("userId", title, "createdAt", "updatedAt") VALUES ($1, $2, NOW(), NOW()) RETURNING *',
+      'INSERT INTO "Conversation" (id, "userId", title, "createdAt", "updatedAt") VALUES (uuid_generate_v4()::text, $1, $2, NOW(), NOW()) RETURNING *',
       [userId, title]
     )
     return result.rows[0]
@@ -152,7 +152,7 @@ export const messageDb = {
 
   async create(conversationId: string, content: string, role: 'user' | 'assistant' | 'system') {
     const result = await query(
-      'INSERT INTO "Message" ("conversationId", content, role, "createdAt") VALUES ($1, $2, $3, NOW()) RETURNING *',
+      'INSERT INTO "Message" (id, "conversationId", content, role, "createdAt") VALUES (uuid_generate_v4()::text, $1, $2, $3, NOW()) RETURNING *',
       [conversationId, content, role]
     )
     return result.rows[0]

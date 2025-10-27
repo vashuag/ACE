@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS "User" (
     password TEXT,
     image TEXT,
     "emailVerified" TIMESTAMP,
-    "createdAt" TIMESTAMP DEFAULT NOW(),
-    "updatedAt" TIMESTAMP DEFAULT NOW()
+    "createdAt" TIMESTAMP DEFAULT NOW() NOT NULL,
+    "updatedAt" TIMESTAMP DEFAULT NOW() NOT NULL
 );
 
 -- Accounts table (for OAuth)
@@ -80,8 +80,8 @@ CREATE TABLE IF NOT EXISTS "Conversation" (
     id TEXT PRIMARY KEY DEFAULT uuid_generate_v4()::text,
     title TEXT NOT NULL,
     "userId" TEXT NOT NULL REFERENCES "User"(id) ON DELETE CASCADE,
-    "createdAt" TIMESTAMP DEFAULT NOW(),
-    "updatedAt" TIMESTAMP DEFAULT NOW()
+    "createdAt" TIMESTAMP DEFAULT NOW() NOT NULL,
+    "updatedAt" TIMESTAMP DEFAULT NOW() NOT NULL
 );
 
 -- Messages
