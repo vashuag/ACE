@@ -1,12 +1,12 @@
 // Email configuration for different environments
 const EMAIL_CONFIG = {
   development: {
-    from: 'Agent to Environment <onboarding@resend.dev>',
+      from: 'Agent to Environment <vashu.agarwal@enviroagent.org>',
     supportEmail: 'vashuag9@gmail.com', // Use your verified email for testing
     testMode: true, // Enable test mode for development
   },
   production: {
-    from: 'Agent to Environment <onboarding@resend.dev>', // Will work once domain is verified
+    from: 'Agent to Environment <vashu.agarwal@enviroagent.org>', // Will work once domain is verified
     supportEmail: 'vashuag9@gmail.com', // Your verified email for admin notifications
     testMode: false, // Real emails to users in production
   }
@@ -38,5 +38,5 @@ To use your custom domain (agenttoenvironment.com) in production:
 4. Once verified, update EMAIL_CONFIG.production.from to use your domain
 5. Deploy your application
 
-For now, using onboarding@resend.dev works perfectly for development!
+For now, using vashu.agarwal@enviroagent.org works perfectly for development!
 */

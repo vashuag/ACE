@@ -28,7 +28,7 @@ Your app is now configured to send real emails to users in production using Rese
 **✅ Already Configured - No Changes Needed!**
 
 **Email Addresses:**
-- From: `Agent to Environment <onboarding@resend.dev>`
+- From: `Agent to Environment <vashu.agarwal@enviroagent.org>`
 - Admin: `vashuag9@gmail.com`
 
 **Benefits:**
