@@ -11,13 +11,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Agent to Environment - AI Agents Meet Real World",
-  description: "Transform your goals into reality with intelligent AI agents that understand, adapt, and execute in any environment. Experience the future of human-AI collaboration.",
-  keywords: "AI agents, artificial intelligence, automation, environment, goals, collaboration",
-  authors: [{ name: "Agent to Environment Team" }],
+  title: "EnviroAgent - The Agent That Shapes Your World for Success",
+  description: "An AI agent that interacts with your environment to increase the chances of goal completion. Transform your goals into reality with intelligent AI that adapts your world for success.",
+  keywords: "AI agents, artificial intelligence, automation, environment, goals, collaboration, EnviroAgent, productivity, smart environment",
+  authors: [{ name: "EnviroAgent Team" }],
   openGraph: {
-    title: "Agent to Environment - AI Agents Meet Real World",
-    description: "Transform your goals into reality with intelligent AI agents that understand, adapt, and execute in any environment.",
+    title: "EnviroAgent - The Agent That Shapes Your World for Success",
+    description: "An AI agent that interacts with your environment to increase the chances of goal completion.",
     type: "website",
   },
 };

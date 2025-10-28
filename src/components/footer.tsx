@@ -9,10 +9,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Agent to Environment</h3>
+            <h3 className="text-2xl font-bold mb-4">EnviroAgent</h3>
             <p className="text-gray-300 mb-6 max-w-md">
-              Bridging the gap between AI intelligence and real-world application. 
-              Experience the future where AI agents understand, adapt, and execute in any environment.
+              The Agent That Shapes Your World for Success. 
+              An AI agent that interacts with your environment to increase the chances of goal completion.
             </p>
             <div className="flex space-x-4 mb-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -61,7 +61,7 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-300">hello@vashustartup.com</span>
+                <span className="text-gray-300">hello@enviroagent.org</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-gray-400" />
@@ -78,7 +78,7 @@ export function Footer() {
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">
-              © 2024 Vashu Startup. All rights reserved.
+              © 2025 EnviroAgent. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">

@@ -82,7 +82,7 @@ function HeroSection() {
             className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-medium mb-8"
           >
             <Sparkles className="w-4 h-4 mr-2" />
-            Introducing Agent to Environment
+            Introducing EnviroAgent
           </motion.div>
 
           <motion.h1
@@ -91,9 +91,9 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
-            AI Agents Meet
+            The Agent That Shapes
             <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Real World
+              Your World for Success
             </span>
           </motion.h1>
 
@@ -103,8 +103,8 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.5 }}
             className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
-            Transform your goals into reality with intelligent AI agents that understand, 
-            adapt, and execute in any environment. Experience the future of human-AI collaboration.
+            An AI agent that interacts with your environment to increase the chances of goal completion. 
+            Transform your goals into reality with intelligent AI that adapts your world for success.
           </motion.p>
 
           <motion.div
@@ -154,33 +154,33 @@ function FeaturesSection() {
   const features = [
     {
       icon: Bot,
-      title: "Intelligent Agents",
-      description: "AI agents that understand context, learn from interactions, and adapt to your specific needs and environment."
+      title: "Environment Interaction",
+      description: "AI agents that actively modify your digital and physical environment to create optimal conditions for goal achievement."
     },
     {
       icon: Brain,
-      title: "Multi-Model Support",
-      description: "Access to multiple AI models and capabilities, choosing the best one for each specific task and goal."
+      title: "Goal Understanding",
+      description: "Advanced LLM-based reasoning that converts natural language goals into structured action plans and environment adaptations."
     },
     {
       icon: Globe,
-      title: "Environment Aware",
-      description: "Agents that understand and interact with real-world environments, making decisions based on context."
+      title: "Multi-Environment Control",
+      description: "Seamlessly control smart devices, apps, calendars, and IoT systems to create the perfect environment for your goals."
     },
     {
       icon: Users,
-      title: "Collaborative Intelligence",
-      description: "Work alongside AI agents in a seamless, conversational interface that feels natural and intuitive."
+      title: "Adaptive Learning",
+      description: "AI that learns from your behavior patterns and continuously optimizes environment adaptations for better results."
     },
     {
       icon: Shield,
-      title: "Secure & Private",
-      description: "Enterprise-grade security with complete privacy controls, ensuring your data and conversations remain protected."
+      title: "Consent-Based Actions",
+      description: "100% permission-based system with full transparency. You control what the agent can access and modify."
     },
     {
       icon: Zap,
-      title: "Real-Time Execution",
-      description: "Agents that can execute tasks, make decisions, and take actions in real-time across multiple platforms."
+      title: "Real-Time Adaptation",
+      description: "Dynamic environment modifications that respond instantly to your progress and changing needs."
     }
   ]
 
@@ -195,11 +195,11 @@ function FeaturesSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            The Future of AI is Here
+            The Future of Goal Achievement
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Experience next-generation AI agents that bridge the gap between digital intelligence 
-            and real-world application.
+            Experience next-generation AI agents that actively shape your environment 
+            to optimize conditions for goal completion.
           </p>
         </motion.div>
 
@@ -237,10 +237,10 @@ function FeaturesSection() {
 // Stats Section
 function StatsSection() {
   const stats = [
-    { number: "10K+", label: "Active Agents" },
-    { number: "99.9%", label: "Uptime" },
-    { number: "50+", label: "AI Models" },
-    { number: "24/7", label: "Support" }
+    { number: "1K+", label: "Goals Achieved" },
+    { number: "95%", label: "Success Rate" },
+    { number: "24/7", label: "Environment Monitoring" },
+    { number: "100%", label: "User Control" }
   ]
 
   return (
@@ -279,11 +279,11 @@ function CTASection() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your Goals?
+            Ready to Shape Your World for Success?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Join thousands of users who are already experiencing the power of AI agents 
-            that understand and execute in real environments.
+            Join the future where AI doesn&apos;t just respond to commands—it actively creates 
+            the conditions that help you achieve your goals.
           </p>
           <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg" asChild>
             <Link href="/auth/signup">
