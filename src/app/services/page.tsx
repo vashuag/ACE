@@ -1,68 +1,68 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CheckCircle, Code, Smartphone, Cloud, Shield, Zap, Users } from "lucide-react"
+import { CheckCircle, Bot, Brain, Globe, Shield, Zap, Users, Target, Lightbulb, Settings } from "lucide-react"
 import Link from "next/link"
 
 export default function ServicesPage() {
   const services = [
     {
-      icon: Code,
-      title: "Web Development",
-      description: "Custom web applications built with modern technologies and best practices.",
-      features: ["React & Next.js", "TypeScript", "Responsive Design", "SEO Optimized"]
+      icon: Bot,
+      title: "AI Goal Understanding",
+      description: "Advanced LLM-based reasoning that converts natural language goals into structured action plans.",
+      features: ["Natural Language Processing", "Goal Structuring", "Intent Recognition", "Priority Analysis"]
     },
     {
-      icon: Smartphone,
-      title: "Mobile Development",
-      description: "Native and cross-platform mobile applications for iOS and Android.",
-      features: ["React Native", "Flutter", "Native iOS/Android", "App Store Optimization"]
+      icon: Globe,
+      title: "Environment Mapping",
+      description: "Comprehensive mapping and control of your digital and physical environment.",
+      features: ["Smart Device Integration", "IoT Control", "App Management", "Calendar Sync"]
     },
     {
-      icon: Cloud,
-      title: "Cloud Solutions",
-      description: "Scalable cloud infrastructure and deployment solutions.",
-      features: ["AWS & Azure", "Docker & Kubernetes", "CI/CD Pipelines", "Auto-scaling"]
+      icon: Brain,
+      title: "Adaptive Learning",
+      description: "AI that learns from your behavior patterns and continuously optimizes environment adaptations.",
+      features: ["Behavioral Analysis", "Pattern Recognition", "Predictive Modeling", "Personalization"]
     },
     {
       icon: Shield,
-      title: "Security Services",
-      description: "Comprehensive security solutions to protect your digital assets.",
-      features: ["Security Audits", "Penetration Testing", "Compliance", "24/7 Monitoring"]
+      title: "Consent-Based Control",
+      description: "100% user-controlled system with full transparency and permission-based actions.",
+      features: ["User Consent", "Action Transparency", "Privacy Protection", "Control Override"]
     },
     {
       icon: Zap,
-      title: "Performance Optimization",
-      description: "Speed up your applications and improve user experience.",
-      features: ["Performance Audits", "Code Optimization", "Database Tuning", "CDN Setup"]
+      title: "Real-Time Adaptation",
+      description: "Dynamic environment modifications that respond instantly to your progress and needs.",
+      features: ["Instant Response", "Dynamic Adjustments", "Progress Tracking", "Context Awareness"]
     },
     {
-      icon: Users,
-      title: "Consulting",
-      description: "Expert guidance on technology strategy and digital transformation.",
-      features: ["Technical Strategy", "Architecture Review", "Team Training", "Best Practices"]
+      icon: Settings,
+      title: "Multi-Platform Integration",
+      description: "Seamless integration with Google Home, SmartThings, Zapier, and custom APIs.",
+      features: ["Google Home API", "SmartThings Integration", "Zapier Webhooks", "Custom APIs"]
     }
   ]
 
   const process = [
     {
       step: "01",
-      title: "Discovery",
-      description: "We start by understanding your business goals, challenges, and requirements."
+      title: "Goal Understanding",
+      description: "Our AI analyzes your natural language goals and converts them into structured action plans."
     },
     {
       step: "02",
-      title: "Planning",
-      description: "Our team creates a detailed project plan with timelines and milestones."
+      title: "Environment Mapping",
+      description: "We map your digital and physical environment to identify control points and opportunities."
     },
     {
       step: "03",
-      title: "Development",
-      description: "We build your solution using agile methodologies and regular communication."
+      title: "Adaptive Actions",
+      description: "AI agents execute environment modifications with your consent to optimize goal achievement."
     },
     {
       step: "04",
-      title: "Launch",
-      description: "We deploy your solution and provide ongoing support and maintenance."
+      title: "Learning Loop",
+      description: "Continuous learning and optimization based on your behavior patterns and results."
     }
   ]
 
@@ -73,11 +73,11 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Our Services
+              EnviroAgent Services
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We offer comprehensive technology solutions to help your business grow and succeed 
-              in the digital world. From web development to cloud solutions, we&apos;ve got you covered.
+              Transform your goals into reality with our AI-powered environment control services. 
+              Experience the future where your environment actively supports your success.
             </p>
           </div>
         </div>
@@ -88,10 +88,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What We Offer
+              AI-Powered Environment Control
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive technology solutions tailored to your business needs.
+              Comprehensive AI services that actively shape your environment for goal achievement.
             </p>
           </div>
 
@@ -126,10 +126,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Process
+              How EnviroAgent Works
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A proven methodology that ensures successful project delivery.
+              Our proven AI-driven process that transforms your goals into environmental adaptations.
             </p>
           </div>
 
@@ -152,37 +152,37 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Flexible Pricing
+              Pricing Plans
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Choose the plan that works best for your business needs.
+              Choose the plan that fits your goal achievement needs.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card>
               <CardHeader className="text-center">
-                <CardTitle>Starter</CardTitle>
-                <div className="text-3xl font-bold text-primary">$2,999</div>
-                <CardDescription>Perfect for small projects</CardDescription>
+                <CardTitle>Personal</CardTitle>
+                <div className="text-3xl font-bold text-primary">$29</div>
+                <CardDescription>Perfect for individual goal achievement</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Up to 5 pages</span>
+                    <span>Up to 5 active goals</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Responsive design</span>
+                    <span>Basic environment control</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Basic SEO</span>
+                    <span>Smart device integration</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>1 month support</span>
+                    <span>Email support</span>
                   </li>
                 </ul>
                 <Button className="w-full mt-6" variant="outline">
@@ -197,30 +197,30 @@ export default function ServicesPage() {
                   Most Popular
                 </div>
                 <CardTitle>Professional</CardTitle>
-                <div className="text-3xl font-bold text-primary">$7,999</div>
-                <CardDescription>Ideal for growing businesses</CardDescription>
+                <div className="text-3xl font-bold text-primary">$99</div>
+                <CardDescription>Ideal for serious goal achievers</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Up to 15 pages</span>
+                    <span>Unlimited goals</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Custom functionality</span>
+                    <span>Advanced AI learning</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Advanced SEO</span>
+                    <span>Multi-platform integration</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>3 months support</span>
+                    <span>Priority support</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Analytics setup</span>
+                    <span>Custom environment APIs</span>
                   </li>
                 </ul>
                 <Button className="w-full mt-6">
@@ -233,17 +233,17 @@ export default function ServicesPage() {
               <CardHeader className="text-center">
                 <CardTitle>Enterprise</CardTitle>
                 <div className="text-3xl font-bold text-primary">Custom</div>
-                <CardDescription>For large-scale projects</CardDescription>
+                <CardDescription>For organizations and teams</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Unlimited pages</span>
+                    <span>Team goal management</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Custom integrations</span>
+                    <span>Custom AI training</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
-                    <span>Priority development</span>
+                    <span>White-label solution</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
@@ -271,10 +271,10 @@ export default function ServicesPage() {
       <section className="py-20 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Start Your Project?
+            Ready to Transform Your Goals?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss your requirements and create something amazing together.
+            Let&apos;s discuss how EnviroAgent can help you achieve your goals through intelligent environment control.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>

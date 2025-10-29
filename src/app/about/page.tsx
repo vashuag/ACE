@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Users, Target, Lightbulb, Award } from "lucide-react"
+import { Bot, Brain, Globe, Shield, Zap, Users, Target, Lightbulb, Award } from "lucide-react"
 
 export default function AboutPage() {
   return (
@@ -9,12 +9,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About Vashu Startup
+              About EnviroAgent
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We&apos;re a team of passionate innovators dedicated to creating solutions 
-              that make a real difference in the world. Our mission is to revolutionize 
-              technology and empower businesses to achieve their full potential.
+              We&apos;re pioneering the future where AI doesn&apos;t just respond to commands—it actively shapes your environment to help you achieve your goals. Our mission is to bridge the gap between human intent and environmental adaptation.
             </p>
           </div>
         </div>
@@ -33,9 +31,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  To democratize access to cutting-edge technology and provide innovative 
-                  solutions that help businesses of all sizes thrive in the digital age. 
-                  We believe technology should be accessible, reliable, and transformative.
+                  To build intelligent AI agents that not only understand human goals but actively interact with and adapt the user&apos;s environment to help them achieve those goals faster, smarter, and more efficiently. We believe technology should adapt to humans, not the other way around.
                 </p>
               </CardContent>
             </Card>
@@ -49,9 +45,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  To become the leading provider of innovative technology solutions, 
-                  empowering organizations worldwide to achieve unprecedented growth 
-                  and success through digital transformation.
+                  To become the leading platform for AI environment orchestration, creating a unified ecosystem where agents and devices collaborate dynamically to optimize human success. We envision a world where your environment actively supports your goals.
                 </p>
               </CardContent>
             </Card>
@@ -67,7 +61,7 @@ export default function AboutPage() {
               Our Core Values
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              These principles guide everything we do and shape our company culture.
+              These principles guide our development of AI agents that truly understand and adapt to human needs.
             </p>
           </div>
 
@@ -77,12 +71,11 @@ export default function AboutPage() {
                 <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Collaboration</CardTitle>
+                <CardTitle>Consent-Based Control</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We believe in the power of teamwork and building strong partnerships 
-                  with our clients and community.
+                  We believe in 100% user control and transparency. Every environment modification requires explicit consent, and users always understand what actions are being taken.
                 </p>
               </CardContent>
             </Card>
@@ -90,14 +83,13 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Lightbulb className="h-6 w-6 text-primary" />
+                  <Brain className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Innovation</CardTitle>
+                <CardTitle>Adaptive Intelligence</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We constantly push boundaries and explore new possibilities to deliver 
-                  cutting-edge solutions.
+                  Our AI agents learn from your behavior patterns and continuously optimize environment adaptations for better goal achievement.
                 </p>
               </CardContent>
             </Card>
@@ -105,14 +97,13 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Award className="h-6 w-6 text-primary" />
+                  <Globe className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Excellence</CardTitle>
+                <CardTitle>Multi-Environment Control</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We strive for the highest quality in everything we do, from our products 
-                  to our customer service.
+                  Seamlessly control smart devices, apps, calendars, and IoT systems to create the perfect environment for your goals.
                 </p>
               </CardContent>
             </Card>
@@ -120,14 +111,13 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardHeader>
                 <div className="mx-auto w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                  <Target className="h-6 w-6 text-primary" />
+                  <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle>Integrity</CardTitle>
+                <CardTitle>Real-Time Adaptation</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600">
-                  We conduct business with honesty, transparency, and respect for all 
-                  stakeholders.
+                  Dynamic environment modifications that respond instantly to your progress and changing needs throughout the day.
                 </p>
               </CardContent>
             </Card>
@@ -143,7 +133,7 @@ export default function AboutPage() {
               Meet Our Team
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The passionate individuals behind Vashu Startup&apos;s success.
+              The passionate individuals behind EnviroAgent&apos;s revolutionary AI technology.
             </p>
           </div>
 
@@ -151,10 +141,10 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardContent className="pt-6">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold mb-2">Sarah Johnson</h3>
-                <p className="text-primary font-medium mb-2">CEO & Founder</p>
+                <h3 className="text-xl font-semibold mb-2">Vashu Agarwal</h3>
+                <p className="text-primary font-medium mb-2">Founder & CEO</p>
                 <p className="text-gray-600">
-                  Visionary leader with 15+ years of experience in technology and business strategy.
+                  AI Engineer & Product Builder passionate about adaptive AI and real-world impact. Experienced in LLMs, NLP, and full-stack systems.
                 </p>
               </CardContent>
             </Card>
@@ -162,10 +152,10 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardContent className="pt-6">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold mb-2">Michael Chen</h3>
-                <p className="text-primary font-medium mb-2">CTO</p>
+                <h3 className="text-xl font-semibold mb-2">AI Research Team</h3>
+                <p className="text-primary font-medium mb-2">Machine Learning Engineers</p>
                 <p className="text-gray-600">
-                  Technical architect passionate about building scalable and innovative solutions.
+                  Specialists in reinforcement learning, behavioral modeling, and environment interaction algorithms.
                 </p>
               </CardContent>
             </Card>
@@ -173,10 +163,10 @@ export default function AboutPage() {
             <Card className="text-center">
               <CardContent className="pt-6">
                 <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
-                <h3 className="text-xl font-semibold mb-2">Emily Rodriguez</h3>
-                <p className="text-primary font-medium mb-2">Head of Design</p>
+                <h3 className="text-xl font-semibold mb-2">Integration Specialists</h3>
+                <p className="text-primary font-medium mb-2">Environment API Team</p>
                 <p className="text-gray-600">
-                  Creative director focused on creating beautiful and intuitive user experiences.
+                  Experts in connecting AI agents with smart devices, IoT systems, and environment control APIs.
                 </p>
               </CardContent>
             </Card>
@@ -192,26 +182,26 @@ export default function AboutPage() {
               Our Impact
             </h2>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Numbers that reflect our commitment to excellence and growth.
+              Numbers that reflect our commitment to revolutionizing AI environment interaction.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-blue-100">Team Members</div>
+              <div className="text-4xl font-bold text-white mb-2">1K+</div>
+              <div className="text-blue-100">Goals Achieved</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">1000+</div>
-              <div className="text-blue-100">Projects Completed</div>
+              <div className="text-4xl font-bold text-white mb-2">95%</div>
+              <div className="text-blue-100">Success Rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">25+</div>
-              <div className="text-blue-100">Countries Served</div>
+              <div className="text-4xl font-bold text-white mb-2">24/7</div>
+              <div className="text-blue-100">Environment Monitoring</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-blue-100">Years of Excellence</div>
+              <div className="text-4xl font-bold text-white mb-2">100%</div>
+              <div className="text-blue-100">User Control</div>
             </div>
           </div>
         </div>
