@@ -24,7 +24,7 @@ export function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0">
-              <span className="text-2xl font-bold text-primary">Agent to Environment</span>
+              <span className="text-2xl font-bold text-primary">EnviroAgent</span>
             </Link>
           </div>
 

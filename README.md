@@ -1,6 +1,20 @@
-# Vashu Startup - Modern Tech Stack Website
+# EnviroAgent - The Agent That Shapes Your World for Success
 
-A complete startup website built with the latest technologies, featuring authentication, email functionality, and a modern UI.
+An AI agent that interacts with your environment to increase the chances of goal completion. Transform your goals into reality with intelligent AI that adapts your world for success.
+
+## 🧠 Vision
+
+To build intelligent AI agents that not only understand human goals — but actively interact with and adapt the user's environment to help them achieve those goals faster, smarter, and more efficiently.
+
+> "Instead of humans adapting to technology, EnviroAgent makes technology adapt to humans."
+
+## 🚀 What is EnviroAgent?
+
+EnviroAgent is an AI-driven system that bridges the gap between human intent and the environment we live in — digital or physical.
+
+Unlike traditional assistants (like Siri, Alexa, or ChatGPT) that only respond to commands, EnviroAgent acts — it dynamically reshapes your digital ecosystem, devices, and workflows to optimize the conditions for achieving your goal.
+
+Think of it as your Goal Execution Companion — an AI that doesn't just remind you what to do, but actually creates the conditions that help you do it.
 
 ## 🚀 Tech Stack
 

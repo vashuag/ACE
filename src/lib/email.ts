@@ -8,7 +8,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
   try {
     // In test mode, send to your verified email instead
     const recipientEmail = EMAIL_SETTINGS.testMode ? 'vashuag9@gmail.com' : email
-    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Welcome to Agent to Environment! 🚀 (Original: ${email})` : 'Welcome to Agent to Environment! 🚀'
+    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Welcome to EnviroAgent! 🚀 (Original: ${email})` : 'Welcome to EnviroAgent! 🚀'
     
     const { data, error } = await resend.emails.send({
       from: EMAIL_SETTINGS.from,
@@ -20,7 +20,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Welcome to Agent to Environment</title>
+          <title>Welcome to EnviroAgent</title>
         </head>
         <body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc;">
           <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -28,10 +28,10 @@ export async function sendWelcomeEmail(email: string, name: string) {
             <!-- Header -->
             <div style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); padding: 40px 30px; text-align: center;">
               <h1 style="color: #ffffff; margin: 0; font-size: 28px; font-weight: 700;">
-                🤖 Agent to Environment
+                🤖 EnviroAgent
               </h1>
               <p style="color: #e0e7ff; margin: 10px 0 0 0; font-size: 16px;">
-                AI Agents Meet Real World
+                The Agent That Shapes Your World for Success
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export async function sendWelcomeEmail(email: string, name: string) {
               </h2>
               
               <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                Thank you for joining Agent to Environment! You're now part of the future where AI agents understand, adapt, and execute in real-world environments.
+                Thank you for joining EnviroAgent! You're now part of the future where AI agents actively shape your environment to help you achieve your goals.
               </p>
 
               <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 30px 0;">
@@ -51,9 +51,9 @@ export async function sendWelcomeEmail(email: string, name: string) {
                 </h3>
                 <ul style="color: #4b5563; font-size: 14px; line-height: 1.6; margin: 0; padding-left: 20px;">
                   <li>Access your personalized dashboard</li>
-                  <li>Start conversations with AI agents</li>
-                  <li>Set and track your goals</li>
-                  <li>Experience real-world AI collaboration</li>
+                  <li>Set goals and let AI shape your environment</li>
+                  <li>Experience adaptive environment control</li>
+                  <li>Track progress with intelligent insights</li>
                 </ul>
               </div>
 
@@ -72,10 +72,10 @@ export async function sendWelcomeEmail(email: string, name: string) {
             <!-- Footer -->
             <div style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
               <p style="color: #6b7280; font-size: 14px; margin: 0 0 10px 0;">
-                © 2025 Agent to Environment. All rights reserved.
+                © 2025 EnviroAgent. All rights reserved.
               </p>
               <p style="color: #9ca3af; font-size: 12px; margin: 0;">
-                You received this email because you signed up for Agent to Environment.
+                You received this email because you signed up for EnviroAgent.
               </p>
             </div>
           </div>
@@ -150,7 +150,7 @@ export async function sendContactEmail(name: string, email: string, subject: str
             <!-- Footer -->
             <div style="background-color: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
               <p style="color: #6b7280; font-size: 12px; margin: 0;">
-                This email was sent from the Agent to Environment contact form.
+                This email was sent from the EnviroAgent contact form.
               </p>
             </div>
           </div>
@@ -211,7 +211,7 @@ export async function sendNewsletterEmail(email: string) {
               </h2>
               
               <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                You've successfully subscribed to the Agent to Environment newsletter. You'll now receive:
+                You've successfully subscribed to the EnviroAgent newsletter. You'll now receive:
               </p>
 
               <div style="background-color: #f3f4f6; padding: 20px; border-radius: 8px; margin: 30px 0;">
@@ -248,7 +248,7 @@ export async function sendNewsletterEmail(email: string) {
             <!-- Footer -->
             <div style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
               <p style="color: #6b7280; font-size: 14px; margin: 0 0 10px 0;">
-                © 2025 Agent to Environment. All rights reserved.
+                © 2025 EnviroAgent. All rights reserved.
               </p>
               <p style="color: #9ca3af; font-size: 12px; margin: 0;">
                 You received this email because you subscribed to our newsletter.
@@ -280,7 +280,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
     
     // In test mode, send to your verified email instead
     const recipientEmail = EMAIL_SETTINGS.testMode ? 'vashuag9@gmail.com' : email
-    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Reset Your Password - Agent to Environment (Original: ${email})` : 'Reset Your Password - Agent to Environment'
+    const subject = EMAIL_SETTINGS.testMode ? `[TEST] Reset Your Password - EnviroAgent (Original: ${email})` : 'Reset Your Password - EnviroAgent'
     
     const { data, error } = await resend.emails.send({
       from: EMAIL_SETTINGS.from,
@@ -303,7 +303,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
                 🔐 Password Reset
               </h1>
               <p style="color: #fecaca; margin: 10px 0 0 0; font-size: 16px;">
-                Secure your Agent to Environment account
+                Secure your EnviroAgent account
               </p>
             </div>
 
@@ -314,7 +314,7 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
               </h2>
               
               <p style="color: #4b5563; font-size: 16px; line-height: 1.6; margin: 0 0 20px 0;">
-                We received a request to reset your password for your Agent to Environment account. Click the button below to create a new password:
+                We received a request to reset your password for your EnviroAgent account. Click the button below to create a new password:
               </p>
 
               <div style="text-align: center; margin: 30px 0;">
@@ -338,10 +338,10 @@ export async function sendPasswordResetEmail(email: string, resetToken: string) 
             <!-- Footer -->
             <div style="background-color: #f9fafb; padding: 30px; text-align: center; border-top: 1px solid #e5e7eb;">
               <p style="color: #6b7280; font-size: 14px; margin: 0 0 10px 0;">
-                © 2025 Agent to Environment. All rights reserved.
+                © 2025 EnviroAgent. All rights reserved.
               </p>
               <p style="color: #9ca3af; font-size: 12px; margin: 0;">
-                This is an automated security email from Agent to Environment.
+                This is an automated security email from EnviroAgent.
               </p>
             </div>
           </div>
