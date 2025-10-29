@@ -61,15 +61,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-300">hello@enviroagent.org</span>
+                <span className="text-gray-300">vashu.agarwal@enviroagent.org</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <span className="text-gray-300">+91 7303571379</span>
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-gray-400" />
-                <span className="text-gray-300">San Francisco, CA</span>
+                <span className="text-gray-300">India</span>
               </div>
             </div>
           </div>
