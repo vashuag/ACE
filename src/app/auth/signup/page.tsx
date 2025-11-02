@@ -62,7 +62,7 @@ export default function SignUpPage() {
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Create your account</CardTitle>
             <CardDescription>
-              Join Vashu Startup and start your journey with us
+              Join EnviroAgent and start your journey with us
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -226,4 +226,4 @@ If you encounter any issues or have questions:
 
 ---
 
-**Built with ❤️ by the Vashu Startup Team**
+**Built with ❤️ by the EnviroAgent Team**

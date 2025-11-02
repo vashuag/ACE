@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Vashu Startup - Development Setup Script
+# EnviroAgent - Development Setup Script
 
-echo "🚀 Setting up Vashu Startup project..."
+echo "🚀 Setting up EnviroAgent project..."
 
 # Check if .env.local exists
 if [ ! -f ".env.local" ]; then

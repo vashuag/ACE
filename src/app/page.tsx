@@ -37,7 +37,7 @@ function FloatingShapes() {
       {shapes.map((shape) => (
         <motion.div
           key={shape.id}
-          className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-60"
+          className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-60"
           style={{
             left: `${shape.left}%`,
             top: `${shape.top}%`,
@@ -61,10 +61,10 @@ function FloatingShapes() {
 // Hero Section with Animations
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-950 via-slate-900 to-slate-900 overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 via-cyan-500/10 to-teal-400/10"></div>
         <FloatingShapes />
       </div>
 
@@ -79,7 +79,7 @@ function HeroSection() {
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm font-medium mb-8"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/15 border border-teal-400/30 text-teal-200 text-sm font-medium mb-8"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             Introducing EnviroAgent
@@ -92,7 +92,7 @@ function HeroSection() {
             className="text-5xl md:text-7xl font-bold text-white mb-6"
           >
             The Agent That Shapes
-            <span className="block bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-teal-300 via-cyan-300 to-teal-200 bg-clip-text text-transparent">
               Your World for Success
             </span>
           </motion.h1>
@@ -101,7 +101,7 @@ function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-slate-200 mb-8 max-w-4xl mx-auto leading-relaxed"
           >
             An AI agent that interacts with your environment to increase the chances of goal completion. 
             Transform your goals into reality with intelligent AI that adapts your world for success.
@@ -113,13 +113,16 @@ function HeroSection() {
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg" asChild>
+            <Button size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white px-8 py-4 text-lg" asChild>
               <Link href="/auth/signup">
                 Start Your Journey
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button variant="outline" size="lg" className="border-blue-400 text-blue-300 hover:bg-blue-500/20 px-8 py-4 text-lg" asChild>
+            <Button variant="secondary" size="lg" className="px-8 py-4 text-lg" asChild>
+              <Link href="/dashboard">Go to Dashboard</Link>
+            </Button>
+            <Button variant="outline" size="lg" className="border-teal-400 text-teal-200 hover:bg-teal-500/15 px-8 py-4 text-lg" asChild>
               <Link href="/about">Learn More</Link>
             </Button>
           </motion.div>
@@ -136,12 +139,12 @@ function HeroSection() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center"
+          className="w-6 h-10 border-2 border-teal-300 rounded-full flex justify-center"
         >
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-blue-400 rounded-full mt-2"
+            className="w-1 h-3 bg-teal-300 rounded-full mt-2"
           />
         </motion.div>
       </motion.div>
@@ -216,7 +219,7 @@ function FeaturesSection() {
                 <CardHeader className="text-center">
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4"
+                    className="mx-auto w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-4"
                   >
                     <feature.icon className="h-8 w-8 text-white" />
                   </motion.div>
@@ -244,7 +247,7 @@ function StatsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-700">
+    <section className="py-20 bg-gradient-to-r from-teal-600 to-cyan-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((stat, index) => (
@@ -258,7 +261,7 @@ function StatsSection() {
               <div className="text-4xl md:text-5xl font-bold text-white mb-2">
                 {stat.number}
               </div>
-              <div className="text-blue-100 text-lg">{stat.label}</div>
+              <div className="text-teal-50 text-lg">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -270,7 +273,7 @@ function StatsSection() {
 // CTA Section
 function CTASection() {
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -285,12 +288,17 @@ function CTASection() {
             Join the future where AI doesn&apos;t just respond to commands—it actively creates 
             the conditions that help you achieve your goals.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg" asChild>
+          <Button size="lg" className="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white px-8 py-4 text-lg" asChild>
             <Link href="/auth/signup">
               Get Started Now
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
+        <div className="mt-4">
+          <Button variant="secondary" size="lg" className="px-8 py-4 text-lg" asChild>
+            <Link href="/dashboard">Open Dashboard</Link>
+          </Button>
+        </div>
         </motion.div>
       </div>
     </section>

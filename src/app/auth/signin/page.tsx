@@ -70,7 +70,7 @@ function SignInForm() {
           <CardHeader className="text-center">
             <CardTitle className="text-2xl font-bold">Welcome back</CardTitle>
             <CardDescription>
-              Sign in to your Vashu Startup account
+              Sign in to your EnviroAgent account
             </CardDescription>
           </CardHeader>
           <CardContent>

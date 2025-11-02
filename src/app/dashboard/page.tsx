@@ -9,6 +9,8 @@ import { Input } from "@/components/ui/input"
 import { Send, Plus, Bot, User, Trash2, MessageSquare } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://127.0.0.1:8000"
+
 interface Message {
   id: string
   content: string
@@ -76,26 +78,48 @@ export default function ChatDashboard() {
     setInputMessage("")
     setIsLoading(true)
 
-    // Simulate AI response (replace with actual API call)
-    setTimeout(() => {
+    try {
+      const userId = (session?.user as any)?.id || session?.user?.email || "demo-user"
+
+      const chatRes = await fetch(`${BACKEND_URL}/api/chat/send`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ user_id: userId, conversation_id: activeConversation, message: inputMessage })
+      })
+      const data = await chatRes.json()
+
       const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        content: `I understand your goal: "${inputMessage}". As your AI agent, I'm ready to help you achieve this. Let me analyze the environment and create a plan for execution. What specific aspects would you like me to focus on first?`,
+        id: data?.assistant_message?.id || (Date.now() + 1).toString(),
+        content: data?.assistant_message?.content || "",
         role: 'assistant',
-        timestamp: new Date()
+        timestamp: new Date(data?.assistant_message?.timestamp || Date.now())
       }
 
+      const newTitle = userMessage.content.slice(0, 30) + "..."
       setConversations(prev => prev.map(conv => 
         conv.id === activeConversation 
           ? { 
               ...conv, 
               messages: [...conv.messages, aiMessage],
-              title: conv.messages.length === 0 ? inputMessage.slice(0, 30) + "..." : conv.title
+              title: conv.messages.length === 0 ? newTitle : conv.title
             }
           : conv
       ))
+    } catch (e) {
+      const aiMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: `I couldn't reach the backend at ${BACKEND_URL}. Please ensure it is running.`,
+        role: 'assistant',
+        timestamp: new Date()
+      }
+      setConversations(prev => prev.map(conv => 
+        conv.id === activeConversation 
+          ? { ...conv, messages: [...conv.messages, aiMessage] }
+          : conv
+      ))
+    } finally {
       setIsLoading(false)
-    }, 1500)
+    }
   }
 
   const deleteConversation = (conversationId: string) => {
@@ -161,7 +185,7 @@ export default function ChatDashboard() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         className={`p-3 border-b cursor-pointer hover:bg-gray-50 flex items-center justify-between group ${
-                          activeConversation === conversation.id ? 'bg-blue-50 border-blue-200' : ''
+                          activeConversation === conversation.id ? 'bg-teal-50 border-teal-200' : ''
                         }`}
                         onClick={() => setActiveConversation(conversation.id)}
                       >
@@ -192,7 +216,7 @@ export default function ChatDashboard() {
 
           {/* Chat Interface */}
           <div className="lg:col-span-3">
-            <Card className="h-[600px] flex flex-col">
+            <Card className="h-[600px] min-h-0 flex flex-col">
               <CardHeader>
                 <CardTitle>
                   {currentConversation ? currentConversation.title : "Select a conversation"}
@@ -205,7 +229,7 @@ export default function ChatDashboard() {
                 </CardDescription>
               </CardHeader>
               
-              <CardContent className="flex-1 flex flex-col p-0">
+              <CardContent className="flex-1 min-h-0 flex flex-col p-0">
                 {currentConversation ? (
                   <>
                     {/* Messages */}
@@ -223,8 +247,8 @@ export default function ChatDashboard() {
                             }`}>
                               <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                                 message.role === 'user' 
-                                  ? 'bg-blue-500' 
-                                  : 'bg-gradient-to-r from-purple-500 to-blue-500'
+                                  ? 'bg-teal-600' 
+                                  : 'bg-gradient-to-r from-teal-500 to-cyan-500'
                               }`}>
                                 {message.role === 'user' ? (
                                   <User className="h-4 w-4 text-white" />
@@ -234,12 +258,12 @@ export default function ChatDashboard() {
                               </div>
                               <div className={`px-4 py-2 rounded-lg ${
                                 message.role === 'user'
-                                  ? 'bg-blue-500 text-white'
+                                  ? 'bg-teal-600 text-white'
                                   : 'bg-gray-100 text-gray-900'
                               }`}>
                                 <p className="text-sm">{message.content}</p>
                                 <p className={`text-xs mt-1 ${
-                                  message.role === 'user' ? 'text-blue-100' : 'text-gray-500'
+                                  message.role === 'user' ? 'text-teal-100' : 'text-gray-500'
                                 }`}>
                                   {message.timestamp.toLocaleTimeString()}
                                 </p>
@@ -256,7 +280,7 @@ export default function ChatDashboard() {
                           className="flex justify-start"
                         >
                           <div className="flex items-start space-x-2">
-                            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center">
+                            <div className="w-8 h-8 rounded-full bg-gradient-to-r from-teal-500 to-cyan-500 flex items-center justify-center">
                               <Bot className="h-4 w-4 text-white" />
                             </div>
                             <div className="bg-gray-100 px-4 py-2 rounded-lg">
